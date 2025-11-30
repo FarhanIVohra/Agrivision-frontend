@@ -93,8 +93,9 @@ const RegistrationForm = () => {
       const { latitude, longitude } = position.coords;
 
       // Use Geoapify API to get address from coordinates
+      const GEOAPIFY_KEY = import.meta.env.VITE_GEOAPIFY_KEY;
       const response = await fetch(
-        `https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&apiKey=${import.meta.env.VITE_GEOAPIFY_API_KEY || 'your_geoapify_api_key_here'}`
+        `https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&apiKey=${GEOAPIFY_KEY}`
       );
 
       if (!response.ok) {
