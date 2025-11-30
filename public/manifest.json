@@ -1,0 +1,20 @@
+{
+  "short_name": "AgriVision",
+  "name": "AgriVision - Smart Farming Solutions",
+  "icons": [
+    {
+      "src": "assets/images/agrivision-logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "assets/images/agrivision-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#22c55e",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,129 @@
+{
+  "app": {
+    "name": "एग्रीविज़न",
+    "tagline": "आधुनिक कृषि के लिए स्मार्ट समाधान"
+  },
+  "login": {
+    "title": "वापसी पर स्वागत है",
+    "subtitle": "अपने व्यक्तिगत फार्मिंग डैशबोर्ड तक पहुँचने के लिए साइन इन करें",
+    "email": "ईमेल पता",
+    "password": "पासवर्ड",
+    "remember": "मुझे याद रखें",
+    "forgot": "पासवर्ड भूल गए?",
+    "signin": "साइन इन",
+    "signingIn": "साइन इन हो रहा है...",
+    "continueGoogle": "गूगल के साथ जारी रखें",
+    "failed": "लॉगिन विफल",
+    "invalid": "अमान्य विवरण। ईमेल: {{email}} और पासवर्ड: {{password}} उपयोग करें"
+  },
+  "register": {
+    "title": "अपना खाता बनाएँ",
+    "subtitle": "अपनी फसल उपज बढ़ाने के लिए स्मार्ट तकनीक का उपयोग करें",
+    "create": "खाता बनाएँ",
+    "creating": "खाता बनाया जा रहा है..."
+  },
+  "common": {
+    "secure": "सुरक्षित",
+    "trusted": "10k+ किसानों का भरोसा",
+    "award": "पुरस्कार विजेता",
+    "or": "या",
+    "language": "भाषा",
+    "logout": "लॉगआउट"
+  },
+  "dashboard": {
+    "greetMorning": "सुप्रभात",
+    "greetAfternoon": "शुभ दोपहर",
+    "greetEvening": "शुभ संध्या",
+    "notifications": "सूचनाएँ",
+    "settings": "सेटिंग्स",
+    "quickActions": "त्वरित क्रियाएँ",
+    "soilAnalysis": "मृदा विश्लेषण",
+    "soilAnalysisDesc": "मृदा स्वास्थ्य जाँचें",
+    "pestDetection": "कीट पहचान",
+    "pestDetectionDesc": "एआई आधारित कीट पहचान",
+    "reports": "रिपोर्ट्स",
+    "reportsDesc": "एनालिटिक्स और इनसाइट्स देखें",
+    "todaysTips": "आज की सलाह",
+    "tipIrrigationTitle": "उत्तम सिंचाई समय",
+    "tipIrrigationBody": "सुबह 6-8 बजे के बीच सिंचाई करें ताकि अवशोषण बेहतर हो।",
+    "tipPestTitle": "कीट रोकथाम",
+    "tipPestBody": "पत्तियों की निचली सतह जाँचें। रोकथाम उपचार से बेहतर है।",
+    "farmPerformance": "फार्म प्रदर्शन",
+    "efficiency": "दक्षता स्कोर",
+    "sustainability": "सस्टेनेबिलिटी",
+    "profitability": "लाभप्रदता",
+    "farmManager": "फार्म प्रबंधक"
+  },
+  "soil": {
+    "title": "मृदा स्वास्थ्य मॉनिटर",
+    "subtitle": "उत्तम फसल प्रबंधन हेतु मृदा पैरामीटर ट्रैक करें",
+    "export": "रिपोर्ट निर्यात",
+    "refresh": "डेटा रिफ्रेश",
+    "currentMetrics": "वर्तमान मृदा मापदंड",
+    "trendNpk": "NPK स्तर प्रवृत्ति",
+    "trendPhMoist": "pH व नमी प्रवृत्ति",
+    "recommendations": "मृदा स्वास्थ्य सिफारिशें",
+    "customize": "कस्टमाइज़",
+    "testingFacilities": "नज़दीकी मृदा परीक्षण केंद्र",
+    "viewMap": "मैप देखें",
+    "quickActions": "त्वरित क्रियाएँ",
+    "scheduleTest": "टेस्ट शेड्यूल करें",
+    "viewHistory": "इतिहास देखें",
+    "setAlerts": "अलर्ट सेट करें",
+    "shareReport": "रिपोर्ट साझा करें"
+  },
+  "pest": {
+    "title": "कीट पहचान",
+    "subtitle": "एआई आधारित कीट पहचान और प्रबंधन",
+    "aiReady": "एआई विश्लेषण तैयार",
+    "tabImage": "इमेज विश्लेषण",
+    "tabGallery": "कीट गैलरी",
+    "tabHistory": "इतिहास",
+    "tabWeather": "मौसम जोखिम",
+    "tabCommunity": "समुदाय"
+  },
+  "reports": {
+    "title": "रिपोर्ट्स और एनालिटिक्स",
+    "subtitle": "आपके खेत के लिए व्यापक अंतर्दृष्टि और डेटा-आधारित विश्लेषण",
+    "metaDescription": "डेटा-आधारित निर्णयों के लिए व्यापक कृषि रिपोर्ट और एनालिटिक्स",
+    "refresh": "डेटा रिफ्रेश",
+    "new": "नई रिपोर्ट",
+    "download": "डाउनलोड",
+    "tabs": {
+      "overview": "ओवरव्यू",
+      "weekly": "साप्ताहिक रिपोर्ट",
+      "seasonal": "सीज़न विश्लेषण",
+      "performance": "प्रदर्शन",
+      "predictions": "अनुमान",
+      "financial": "वित्तीय",
+      "benchmarks": "बेंचमार्क",
+      "export": "एक्सपोर्ट"
+    },
+    "overview": {
+      "totalReports": "कुल रिपोर्ट तैयार",
+      "dataPoints": "विश्लेषित डेटा पॉइंट्स",
+      "insights": "उत्पन्न इनसाइट्स",
+      "accuracy": "सटीकता दर"
+    },
+    "quick": {
+      "title": "त्वरित क्रियाएँ",
+      "generateWeekly": "साप्ताहिक रिपोर्ट बनाएं",
+      "compareSeasons": "सीज़न की तुलना करें",
+      "viewPredictions": "अनुमान देखें",
+      "exportAll": "सभी रिपोर्ट एक्सपोर्ट करें"
+    },
+    "recent": {
+      "title": "हाल की रिपोर्ट",
+      "viewAll": "सभी देखें",
+      "status": { "completed": "पूर्ण" },
+      "type": {
+        "health": "स्वास्थ्य",
+        "analytics": "एनालिटिक्स",
+        "financial": "वित्तीय",
+        "predictions": "अनुमान"
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,399 @@
+.soil-health-card {
+  background: var(--card-background, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.soil-health-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Notification Toast */
+.notification-toast {
+  background: var(--color-success, #10b981);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 0.3s ease;
+}
+
+.notification-toast button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 12px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  margin: 0;
+}
+
+.view-details-link {
+  color: var(--color-primary, #3b82f6);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.view-details-link:hover {
+  color: var(--color-primary-dark, #2563eb);
+}
+
+/* Overall Health Score */
+.overall-health {
+  margin-bottom: 24px;
+}
+
+.health-score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: var(--muted-background, #f8fafc);
+  border-radius: 12px;
+  border: 2px solid var(--border-color, #e2e8f0);
+}
+
+.health-score {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.health-status {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Soil Metrics */
+.soil-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: var(--muted-background, #f8fafc);
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.metric-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary, #6b7280);
+}
+
+.metric-value {
+  text-align: right;
+}
+
+.metric-value span:first-child {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+.status {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* Fertilizer Recommendation Section */
+.fertilizer-recommendation-section {
+  margin-bottom: 24px;
+}
+
+/* Recommendations Section */
+.recommendations-section {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  margin-bottom: 16px;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recommendation-item {
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid;
+  background: var(--muted-background, #f8fafc);
+}
+
+.recommendation-item.priority-high {
+  border-left-color: var(--color-error, #ef4444);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.recommendation-item.priority-medium {
+  border-left-color: var(--color-warning, #f59e0b);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.recommendation-item.priority-low {
+  border-left-color: var(--color-success, #10b981);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.recommendation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.recommendation-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+}
+
+.priority-badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.priority-badge.priority-high {
+  background: var(--color-error, #ef4444);
+  color: white;
+}
+
+.priority-badge.priority-medium {
+  background: var(--color-warning, #f59e0b);
+  color: white;
+}
+
+.priority-badge.priority-low {
+  background: var(--color-success, #10b981);
+  color: white;
+}
+
+.recommendation-description {
+  font-size: 13px;
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.recommendation-details {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.expected-outcome,
+.cost-estimate {
+  margin-bottom: 4px;
+}
+
+/* Charts Section */
+.charts-section {
+  margin-bottom: 24px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.chart-toggle {
+  display: flex;
+  background: var(--muted-background, #f8fafc);
+  border-radius: 6px;
+  padding: 2px;
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary, #6b7280);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+  background: var(--color-primary, #3b82f6);
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn:hover:not(.active) {
+  background: var(--border-color, #e2e8f0);
+  color: var(--text-primary, #1f2937);
+}
+
+/* NPK Chart Section */
+.npk-chart-section {
+  margin-bottom: 24px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  background: var(--muted-background, #f8fafc);
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+.footer-info {
+  font-size: 12px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.last-updated,
+.data-source {
+  margin-bottom: 2px;
+}
+
+.refresh-button {
+  background: var(--color-primary, #3b82f6);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refresh-button:hover:not(:disabled) {
+  background: var(--color-primary-dark, #2563eb);
+  transform: translateY(-1px);
+}
+
+.refresh-button:disabled {
+  background: var(--muted-foreground, #9ca3af);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.refresh-button.refreshing {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .soil-health-card {
+    padding: 16px;
+  }
+  
+  .soil-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .chart-container {
+    overflow-x: auto;
+  }
+}
+
+/* CSS Variables for theming */
+:root {
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --muted-foreground: #9ca3af;
+  --border-color: #e2e8f0;
+  --muted-background: #f8fafc;
+  --card-background: #ffffff;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --muted-foreground: #6b7280;
+    --border-color: #374151;
+    --muted-background: #1f2937;
+    --card-background: #111827;
+  }
+}
