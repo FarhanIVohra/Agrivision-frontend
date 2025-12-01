@@ -4,6 +4,9 @@ import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import './FertilizerRecommendationCard.css';
 
+// Backend URL from environment (Vite) - normalize to avoid double slashes
+const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000').replace(/\/$/, '');
+
 const FertilizerRecommendationCard = () => {
   const [fertilizerData, setFertilizerData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -40,7 +43,7 @@ const FertilizerRecommendationCard = () => {
 
       // Call the fertilizer recommendation API endpoint
       const response = await axios.post(
-        'http://localhost:8000/api/soil-health/fertilizer-recommendation',
+        `${BACKEND_URL}/api/soil-health/fertilizer-recommendation`,
         mockSoilData,
         {
           headers: {

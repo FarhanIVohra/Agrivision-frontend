@@ -3,6 +3,9 @@ import { toast } from 'react-hot-toast';
 import Icon from "../../../components/AppIcon";
 import Button from "../../../components/ui/Button";
 
+// Backend URL from environment (Vite) - normalize to avoid double slashes
+const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000').replace(/\/$/, '');
+
 const IrrigationCard = () => {
   const [loading, setLoading] = useState(true);
   const [recommendation, setRecommendation] = useState(null);
@@ -47,7 +50,7 @@ const IrrigationCard = () => {
         longitude: longitude.toString()
       });
 
-      const response = await fetch(`http://localhost:8000/api/irrigation/recommendation?${params}`, {
+      const response = await fetch(`${BACKEND_URL}/api/irrigation/recommendation?${params}`, {
         headers: {
           'Authorization': `Bearer ${authToken}`,
           'Content-Type': 'application/json'

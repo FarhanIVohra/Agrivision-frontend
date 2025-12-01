@@ -3,12 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Icon from '../AppIcon';
 import { useSidebar } from '../../context/SidebarContext';
-import { logout } from '../../store/slices/authSlice';
+import { useAuthContext } from '../../context/AuthContext';
 
 const MainSidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { logout } = useAuthContext();
   const { isCollapsed, isMobileOpen, toggleSidebar, closeMobileSidebar } = useSidebar();
 
   // Get user from Redux state
@@ -61,8 +62,14 @@ const MainSidebar = () => {
   };
 
   const handleLogout = () => {
-    dispatch(logout());
-    navigate('/login');
+    // Use context logout which clears localStorage and redux state
+    try {
+      logout();
+    } catch (e) {
+      // fallback: clear redux and navigate
+      dispatch({ type: 'auth/logout' });
+      navigate('/login');
+    }
   };
 
   const isActiveRoute = (path) => {
@@ -160,6 +167,15 @@ const MainSidebar = () => {
                   <span className="text-sm font-medium text-foreground truncate">{currentUser.name}</span>
                   <span className="text-xs text-muted-foreground truncate">{currentUser.email}</span>
                   <span className="text-xs text-muted-foreground truncate">{currentUser.phone}</span>
+                      <div className="mt-2">
+                        <button
+                          onClick={handleLogout}
+                          className="inline-flex items-center px-2 py-1 rounded-md text-sm bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                        >
+                          <Icon name="LogOut" size={14} color="white" />
+                          <span className="ml-2">Logout</span>
+                        </button>
+                      </div>
                 </div>
               )}
             </div>

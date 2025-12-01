@@ -1,6 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// Backend URL from environment (Vite) - normalize to avoid double slashes
+const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000').replace(/\/$/, '');
+
 export const useAuth = () => {
   const [user, setUser] = useState(null);
   const [authToken, setAuthToken] = useState(null);
@@ -75,7 +78,7 @@ export const useAuth = () => {
     if (!authToken) return false;
 
     try {
-      const response = await fetch('http://localhost:8000/api/auth/me', {
+      const response = await fetch(`${BACKEND_URL}/api/auth/me`, {
         headers: {
           'Authorization': `Bearer ${authToken}`,
           'Content-Type': 'application/json'

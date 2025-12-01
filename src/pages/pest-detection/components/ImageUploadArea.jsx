@@ -3,6 +3,8 @@ import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
 import Button from '../../../components/ui/Button';
 
+// Backend URL from environment (Vite) - normalize to avoid double slashes
+const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000').replace(/\/$/, '');
 const ImageUploadArea = ({ onImageUpload, isAnalyzing, onAnalysisComplete, onAnalysisError }) => {
   const [uploadedImage, setUploadedImage] = useState(null);
   const [dragActive, setDragActive] = useState(false);
@@ -50,7 +52,7 @@ const ImageUploadArea = ({ onImageUpload, isAnalyzing, onAnalysisComplete, onAna
           formData.append('image', file);
           
           setLocalAnalyzing(true);
-          const response = await fetch('http://localhost:8000/api/pest-detection', {
+          const response = await fetch(`${BACKEND_URL}/api/pest-detection`, {
             method: 'POST',
             body: formData,
           });

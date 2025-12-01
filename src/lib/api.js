@@ -1,5 +1,6 @@
 // Central API utility for backend communication
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://agrivision-backend-s72f.onrender.com";
+// Prefer VITE_BACKEND_URL (used across app). Fall back to older VITE_API_BASE_URL for compatibility.
+const API_BASE_URL = import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
 // Get the auth token from localStorage
 const getAuthToken = () => localStorage.getItem('auth_token');

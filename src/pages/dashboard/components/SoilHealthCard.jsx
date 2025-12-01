@@ -23,6 +23,9 @@ import './SoilHealthCard.css';
 
 import { apiGet } from '../../../lib/api';
 
+// Backend URL from environment (Vite) - normalize to avoid double slashes
+const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000').replace(/\/$/, '');
+
 
 const SoilHealthCard = () => {
   const [soilData, setSoilData] = useState({});
@@ -76,7 +79,7 @@ const SoilHealthCard = () => {
       }
 
       // Call the new soil health API endpoint
-      const response = await axios.get('http://localhost:8000/api/dashboard/soil', {
+      const response = await axios.get(`${BACKEND_URL}/api/dashboard/soil`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

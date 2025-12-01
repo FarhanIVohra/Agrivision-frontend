@@ -5,7 +5,7 @@ class ModelPredictionService {
   constructor() {
     this.cache = new Map();
     this.cacheTimeout = 5 * 60 * 1000; // 5 minutes
-    this.backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+  this.backendUrl = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000').replace(/\/$/, '');
   }
 
   // Check cache for recent predictions

@@ -1,7 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setUser as setReduxUser, setToken as setReduxToken } from '../store/slices/authSlice';
+import { setUser as setReduxUser, setToken as setReduxToken, logout as reduxLogout } from '../store/slices/authSlice';
+// Get backend URL from environment variable and normalize (remove trailing slash)
+const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000').replace(/\/$/, '');
 
 const AuthContext = createContext();
 
@@ -59,7 +61,7 @@ export const AuthProvider = ({ children }) => {
   // Validate token with backend
   const validateTokenWithBackend = async (token) => {
     try {
-      const response = await fetch('http://localhost:8000/api/auth/me', {
+  const response = await fetch(`${BACKEND_URL}/api/auth/me`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -87,7 +89,7 @@ export const AuthProvider = ({ children }) => {
   // Login function
   const login = async (email, password, rememberMe = false) => {
     try {
-      const response = await fetch('http://localhost:8000/api/auth/login', {
+  const response = await fetch(`${BACKEND_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -128,7 +130,7 @@ export const AuthProvider = ({ children }) => {
   // Register function
   const register = async (userData) => {
     try {
-      const response = await fetch('http://localhost:8000/api/auth/register', {
+      const response = await fetch(`${BACKEND_URL}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -160,7 +162,13 @@ export const AuthProvider = ({ children }) => {
 
   // Logout function
   const logout = () => {
+    // Clear local storage and redux state
     clearAuthData();
+    try {
+      dispatch(reduxLogout());
+    } catch (e) {
+      // ignore if dispatch not available
+    }
     navigate('/login');
   };
 
